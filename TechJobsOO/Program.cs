@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Encodings.Web;
 
 namespace TechJobsOO
 {
@@ -22,6 +23,24 @@ namespace TechJobsOO
                 Console.WriteLine(job);
             }
             */
+
+            //above was already writen, I added below while I was Unit Testing
+
+/*            Employer acme = new Employer("ACME");
+            Location desert = new Location("Desert");
+            PositionType quality_control = new PositionType("Quality control");
+            CoreCompetency persistence = new CoreCompetency("Persistence");
+            Job test_job = new Job("Product tester", acme, desert, quality_control, persistence);
+            Job test_job2 = new Job("Product tester", acme, desert, quality_control, persistence);*/
+            //Console.WriteLine(test_job.ToString());
+
+           /* string test_string = "\nID: 1\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence\n";
+            Console.WriteLine(test_string);*/
         }
     }
 }

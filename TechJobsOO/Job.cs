@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+
 namespace TechJobsOO
 {
     public class Job
@@ -20,7 +23,7 @@ namespace TechJobsOO
             nextId++;
         }
 
-        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : base()
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
             Name = name;
             EmployerName = employerName;
@@ -41,5 +44,48 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
+        public override string ToString()
+        {
+            string str = "\n";
+            List<string> job_info = new List<string> { this.Id.ToString(), this.Name.ToString(), this.EmployerName.ToString(),
+                this.EmployerLocation.ToString(), this.JobType.ToString(), this.JobCoreCompetency.ToString() };
+
+            for (int i = 0; i < job_info.Count; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        str += "ID: ";
+                        break;
+                    case 1:
+                        str += "Name: ";
+                        break;
+                    case 2:
+                        str += "Employer: ";
+                        break;
+                    case 3:
+                        str += "Location: ";
+                        break;
+                    case 4:
+                        str += "Position Type: ";
+                        break;
+                    case 5:
+                        str += "Core Competency: ";
+                        break;
+                }
+
+                if (job_info[i] == "")
+                {
+                    str += "Data not available";
+                } else
+                {
+                    str += job_info[i];
+                }
+
+                str += "\n";
+            }
+
+            return str;
+        }
     }
 }
